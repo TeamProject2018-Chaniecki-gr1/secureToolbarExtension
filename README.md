@@ -1,1 +1,1 @@
-# secureToolbarExtension
+# Secure Toolbar Extension
