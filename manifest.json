@@ -3,6 +3,12 @@
     "version": "1.0",
     "description": "Secure Toolbar Extension",
     "permissions": ["activeTab", "tabs"],
+    "content_scripts": [
+      {
+        "matches": ["http://*/*"],
+        "js": ["content-script.js"]
+      }
+    ],
     "background": {
       "scripts": ["background.js"],
       "persistent": false
