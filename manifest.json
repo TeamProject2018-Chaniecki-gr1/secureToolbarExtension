@@ -11,6 +11,8 @@
       "scripts": [
         "axios.min.js",
         "alert.js",
+        "checks/checkHTTPS.js",
+        "checks/checkGoogleAPI.js",
         "background.js"
       ],
       "persistent": false

@@ -1,4 +1,6 @@
 let alertActive = false;
+let alertWindowId;
+
 let createAlert = () => {
     if (alertActive == false) {
         chrome.windows.create({'url': 'httpAlert.html', 'type': 'popup', 'width': 600, 'height': 700}, function(window) {
