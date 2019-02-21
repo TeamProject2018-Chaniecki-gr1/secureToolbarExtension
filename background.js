@@ -27,7 +27,7 @@ const checkUrlWithGoogleAPI = (pageToCheck) =>  {
     }}
   )
   .then(function (response) {
-    if(response.status === 200 && !(Object.entries(response.data).length === 0 && response.data.constructor === Object)) {
+    if(response.status === 200 && Object.entries(response.data).length !== 0) {
       createAlert();
     }
   })
