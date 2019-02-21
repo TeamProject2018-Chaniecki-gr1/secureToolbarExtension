@@ -4,12 +4,14 @@
     "description": "Secure Toolbar Extension",
     "permissions": [
       "activeTab", 
+      "storage",
       "tabs",
       "https://safebrowsing.googleapis.com/v4/threatMatches:find"
     ],
     "background": {
       "scripts": [
-        "axios.min.js",
+        "lib/axios.min.js",
+        "logger.js",
         "alert.js",
         "checks/checkHTTPS.js",
         "checks/checkGoogleAPI.js",

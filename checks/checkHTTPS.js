@@ -1,5 +1,6 @@
 const checkHTTPS = (url) => {
-    if (!tab.url.includes("https://") && tab.url.includes("www")) {
+    if (!url.includes("https://") && url.includes("www")) {
+      pushLog("Attempted to connect to " + url + ",  which didn't have HTTPS certificate.");
       createAlert();
     }
 }
