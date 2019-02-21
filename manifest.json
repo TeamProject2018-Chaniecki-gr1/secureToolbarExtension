@@ -2,7 +2,7 @@
     "name": "Secure Toolbar Extension",
     "version": "1.0",
     "description": "Secure Toolbar Extension",
-    "options_page": "options.html",
+    "options_page": "options/options.html",
     "permissions": [
       "activeTab", 
       "storage",

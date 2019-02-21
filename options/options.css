@@ -1,0 +1,7 @@
+#logger {
+    border-style: solid;
+    border-width:1px;
+    min-height:600px;
+    padding: 8px;
+    width:800px;
+}
