@@ -15,7 +15,7 @@ const checkWhitelist = (url) => {
             console.log("ISVERIFIED:",isVerified);
             if (!isVerified) {
                 pushLog("Whitelist enabled, attempted to connect to " + url + ",  which was not defined on whitelist");
-                createAlert();
+                createAlert("Whitelist");
             }
         })
     }

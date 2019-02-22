@@ -24,7 +24,7 @@ const checkGoogleAPI = (url) =>  {
     .then(function (response) {
       if(response.status === 200 && Object.entries(response.data).length !== 0) {
         pushLog("Attempted to connect to " + url + ",  which was flagged as malicious.");
-        createAlert();
+        createAlert("GoogleAPI");
       }
     })
     .catch(function (error) {
