@@ -1,4 +1,6 @@
 let loggerDiv = document.getElementById('logger');
+let whitelistTA = document.getElementById('whitelist');
+
 
 const getLog = () => {
     chrome.storage.local.get({logs: []}, function (result) {
@@ -6,7 +8,6 @@ const getLog = () => {
         if (logs !== undefined) {
             let str = '';
             for (let i = 0, len = logs.length; i < len; i++) {
-                console.log(logs[i]);
                 str += logs[i].value + '<br/>';
             }
             loggerDiv.innerHTML = str;
@@ -14,4 +15,31 @@ const getLog = () => {
     });
 }
 
+const getWhiteList = () => {
+    chrome.storage.local.get({whitelist: []}, function (result) {
+        let whitelist = result.whitelist;
+        let str = '';
+        for (let i = 0, len = whitelist.length; i < len; i++) {
+            str += whitelist[i].value + "\n";
+        }
+        whitelistTA.innerHTML = str;
+    })
+};
+
+const updateWhiteList = () => {
+    let newWhitelist = whitelistTA.value
+    let wlArray = newWhitelist.split("\n");
+    let  newWL = [];
+    for (let i = 0, len = wlArray.length; i < len; i++) {
+        newWL.push({value: wlArray[i]});
+    }
+    chrome.storage.local.set({whitelist: newWL}, function () {});
+}
+  
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById("updateWhitelistButton").addEventListener("click", updateWhiteList);
+});
+
+
 getLog();
+getWhiteList();
