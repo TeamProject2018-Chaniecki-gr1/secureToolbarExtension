@@ -1,5 +1,6 @@
 let loggerDiv = document.getElementById('logger');
 let whitelistTA = document.getElementById('whitelist');
+let whitelistCB = document.getElementById('whitelistEnabled');
 
 
 const getLog = () => {
@@ -31,9 +32,15 @@ const updateWhiteList = () => {
     let wlArray = newWhitelist.split("\n");
     let  newWL = [];
     for (let i = 0, len = wlArray.length; i < len; i++) {
-        newWL.push({value: wlArray[i]});
+        newWL.push({value: wlArray[i].replace(/^\s+|\s+$/g, '')});
     }
     chrome.storage.local.set({whitelist: newWL}, function () {});
+    if(whitelistCB.value === "enabled") {
+        chrome.storage.local.set({whitelistEnabled: true});
+    }
+    else {
+        chrome.storage.local.set({whitelistEnabled: false});
+    }
 }
   
 document.addEventListener('DOMContentLoaded', function() {

@@ -5,13 +5,18 @@
 	<link rel="stylesheet" href="options.css">
 </head>
 <body>
-<h1>Secure Toolbar Extension</h1>
-<h2>Log history:</h2>
-<div id="logger"></div>
+	<h1>Secure Toolbar Extension</h1>
+	<h2>Log history:</h2>
+	<div id="logger"></div>
 
-<h2>Whitelist</h2>
-<textarea id="whitelist"></textarea> 
-<button id="updateWhitelistButton">UPDATE</button>
-<script src="options.js"></script>
+	<h2>Whitelist</h2>
+	<textarea id="whitelist"></textarea>
+	Whitelist:
+	<select id="whitelistEnabled">
+			<option value="enabled">Enabled</option>
+			<option value="disabled">Disabled</option>
+	</select> 
+	<button id="updateWhitelistButton">UPDATE</button>
+	<script src="options.js"></script>
 </body>
 </html>
