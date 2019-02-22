@@ -8,7 +8,6 @@ chrome.tabs.onUpdated.addListener( function (tabId, changeInfo, tab) {
     checkGoogleAPI(tab.url);
     checkHTTPS(tab.url);
     chrome.storage.local.get({whitelistEnabled: false}, function (result) {
-      console.log(result.whitelistEnabled);
       if(result.whitelistEnabled){
         checkWhitelist(tab.url);
       }
