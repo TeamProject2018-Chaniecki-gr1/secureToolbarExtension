@@ -16,6 +16,7 @@
         "alert.js",
         "checks/checkHTTPS.js",
         "checks/checkGoogleAPI.js",
+        "checks/checkWhitelist.js",
         "background.js"
       ],
       "persistent": false

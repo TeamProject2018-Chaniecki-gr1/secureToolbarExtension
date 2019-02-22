@@ -7,6 +7,7 @@ chrome.tabs.onUpdated.addListener( function (tabId, changeInfo, tab) {
   if (tab.active /*&& changeInfo.status == 'complete' &&*/) {
     checkGoogleAPI(tab.url);
     checkHTTPS(tab.url);
+    checkWhitelist(tab.url);
   }
 });
 
